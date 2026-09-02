@@ -34,6 +34,11 @@
 .floating-particles::after {
   right: -500px;
 }
+@media (max-width: 767px) {
+  .floating-particles {
+    display: none;
+  }
+}
 
 /* ===== Brilho diagonal + "levantar" no CTA "Fale com a gente" (hover) =====
  * ::before é uma faixa de luz na diagonal que começa fora do botão à
