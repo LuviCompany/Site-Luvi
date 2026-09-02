@@ -408,6 +408,10 @@
     /* ---------- Formulário de Análise Prévia ---------- */
     var form = document.getElementById("lead-form");
     if (form) {
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
+      var formError = document.getElementById("lead-form-error");
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         var lgpd = form.querySelector("#lgpd");
@@ -415,11 +419,38 @@
           lgpd.focus();
           return;
         }
-        trackEvent("lead_form_submit", {
-          nicho: (form.querySelector("#nicho") || {}).value || ""
-        });
-        // TODO: integrar com backend/CRM real (ex: RD Station) para receber os leads.
-        window.location.href = "obrigado.html";
+
+        if (formError) formError.classList.add("hidden");
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Enviando...";
+        }
+
+        var payload = {
+          nome: (form.querySelector("#nome") || {}).value || "",
+          email: (form.querySelector("#email") || {}).value || "",
+          whatsapp: (form.querySelector("#whatsapp") || {}).value || "",
+          nicho: (form.querySelector("#nicho") || {}).value || "",
+          faturamento: (form.querySelector("#faturamento") || {}).value || ""
+        };
+
+        fetch("/api/send-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error("send-lead failed");
+            trackEvent("lead_form_submit", { nicho: payload.nicho });
+            window.location.href = "obrigado.html";
+          })
+          .catch(function () {
+            if (formError) formError.classList.remove("hidden");
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = submitBtnDefaultText;
+            }
+          });
       });
     }
 
