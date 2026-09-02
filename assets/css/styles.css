@@ -1,0 +1,573 @@
+/* ===== Luvi Company — estilos base além do Tailwind (CDN, sem build) ===== */
+
+/* ===== Glow ambiente nas laterais (Home) =====
+ * Dois blobs grandes e parados (sem animação), um de cada lado, bem
+ * discretos — só decoração de fundo, puro CSS via ::before/::after (sem
+ * JS). fixed:inset-0 acompanha o viewport sozinho durante o scroll.
+ * z-index:1 fica por cima do fundo sólido das seções (ex.: "Números" e o
+ * footer, que são bg-black) — de propósito, pra continuar visível nelas —
+ * mas bem abaixo da navbar (z-50) e de qualquer painel/menu. pointer-events
+ * none garante que nunca captura clique, e a opacidade baixa do gradiente
+ * evita competir com o conteúdo por cima.
+ */
+.floating-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.floating-particles::before,
+.floating-particles::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(255, 59, 0, 0.16) 0%, transparent 70%);
+}
+.floating-particles::before {
+  left: -500px;
+}
+.floating-particles::after {
+  right: -500px;
+}
+
+/* ===== Brilho diagonal + "levantar" no CTA "Fale com a gente" (hover) =====
+ * ::before é uma faixa de luz na diagonal que começa fora do botão à
+ * esquerda (-120%) e atravessa até sair pela direita (120%) no hover, em
+ * 0.7s. z-index negativo fica atrás do texto mas na frente do fundo laranja
+ * — só funciona porque o próprio .btn-shine leva isolation:isolate, senão o
+ * z-index negativo escapa pro stacking context da página (bug já visto antes
+ * nos cards da seção "dor" — ver histórico do projeto). overflow:hidden
+ * garante que a faixa nunca vaza pra fora da pílula.
+ */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.2s ease;
+}
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-shine:hover,
+.btn-shine:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 42px rgba(255, 59, 0, 0.4);
+}
+.btn-shine:hover::before,
+.btn-shine:focus-visible::before {
+  transform: translateX(120%);
+}
+/* CTAs de contorno (fundo transparente, ex.: "Falar no WhatsApp") não levam
+ * o glow laranja do hover — numa pílula sem preenchimento sólido ele vaza e
+ * fica um halo estranho em volta do botão. Mantêm a faixa de luz e o
+ * "levantar", só sem a sombra colorida. */
+.btn-shine.border:hover,
+.btn-shine.border:focus-visible {
+  box-shadow: none;
+}
+
+/* ===== Carrossel de depoimentos ("Quem está dentro, recomenda.") ===== */
+.testimonial-track {
+  display: grid;
+}
+.testimonial-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.testimonial-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-slide {
+    transition: none;
+  }
+}
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: width 0.2s ease, background-color 0.2s ease;
+  padding: 0;
+}
+.testimonial-dot.is-active {
+  width: 24px;
+  background: var(--color-primary);
+}
+.testimonial-video-card:hover .testimonial-play-btn {
+  transform: scale(1.08);
+}
+.testimonial-play-btn {
+  transition: transform 0.2s ease;
+}
+
+/* Glassmorphism dos cards de "Nossos serviços" — reforço explícito pra Safari */
+#servicos .backdrop-blur-md {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+:root {
+  --color-primary: #FF3B00;
+  --color-primary-dark: #CC2F00;
+  --color-bg: #0A0A0A;
+  --color-surface: #1A1A1A;
+  --color-surface-2: #2A2A2A;
+  --color-muted: #9CA3AF;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: smooth !important;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* ===== Skip link (acessibilidade) ===== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ===== Foco visível ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== Glow radial laranja (hero e seções de destaque) ===== */
+.glow-hero {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 100%, rgba(255, 59, 0, 0.38), transparent 72%);
+}
+@media (max-width: 640px) {
+  .glow-hero {
+    background: radial-gradient(ellipse 80% 35% at 50% 100%, rgba(255, 59, 0, 0.3), transparent 72%);
+  }
+}
+
+.glow-soft {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255, 59, 0, 0.14), transparent 70%);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, black 40%, transparent 90%);
+}
+
+/* ===== Badge pill ===== */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(42, 42, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: #E5E7EB;
+  font-size: 0.8125rem;
+  padding: 6px 14px 6px 16px;
+  border-radius: 999px;
+}
+
+/* ===== Scroll-snap carrossel (mobile) ===== */
+.snap-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+/* .snap-row define display:flex incondicional (sem media query), então tem a
+   mesma especificidade da utility .hidden do Tailwind e, por vir depois dela
+   no cascade (styles.css é carregado após o <style> injetado pelo CDN do
+   Tailwind), sobrescrevia .hidden e deixava os 3 painéis do Portfólio
+   visíveis ao mesmo tempo. Esta regra garante que .hidden sempre vença. */
+.snap-row.hidden {
+  display: none;
+}
+.snap-row::-webkit-scrollbar {
+  display: none;
+}
+.snap-row > * {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+/* ===== Transição de fade ao trocar de aba (Portfólio) ===== */
+[data-tab-panel] {
+  transition: opacity 0.2s ease;
+}
+[data-tab-panel].tab-panel-fade-out {
+  opacity: 0;
+}
+
+/* ===== Reveal on scroll ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 640px) {
+  .reveal {
+    transform: translateY(12px);
+    transition-duration: 0.4s;
+  }
+}
+
+/* ===== Mockup card flutuante (hero) ===== */
+.floating-card {
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+@media (min-width: 768px) {
+  .floating-card:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+}
+
+/* ===== Menu mobile off-canvas ===== */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* ===== Accordion (details/summary) ===== */
+details.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+details.faq-item .faq-icon {
+  transition: transform 0.25s ease;
+}
+details.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+details.faq-item[open] .faq-answer {
+  animation: faqOpen 0.25s ease;
+}
+@keyframes faqOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Portfolio tabs ===== */
+.tab-btn[aria-selected="true"] {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ===== Placeholder de imagem (cinza sólido) ===== */
+.img-placeholder {
+  background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Área de toque mínima 44x44 em controles */
+button, a.tap-target {
+  min-height: 44px;
+}
+
+/* ===== Contador ===== */
+.counter[data-counted="true"] {
+  transition: none;
+}
+
+/* ===== Dropdown "Serviços" (navbar desktop) ===== */
+.dropdown-panel {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 12px;
+  width: 17rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1A1A1A;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 60;
+}
+.dropdown-panel.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.dropdown-chevron {
+  transition: transform 0.2s ease;
+}
+[data-dropdown-trigger][aria-expanded="true"] .dropdown-chevron {
+  transform: rotate(180deg);
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-panel {
+    transition: none;
+  }
+  .dropdown-chevron {
+    transition: none;
+  }
+}
+
+/* ===== Glow animado no perímetro dos cards (bloco de dor) ===== */
+.card-glow {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+}
+.card-glow-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.card-glow-ring::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(from 0deg, transparent 0%, var(--color-primary) 15%, transparent 30%, transparent 100%);
+  filter: blur(8px);
+  animation: cardGlowSpin var(--glow-duration, 4.5s) linear infinite;
+  will-change: transform;
+  transition: filter 0.25s ease;
+}
+.card-glow:hover .card-glow-ring::before {
+  filter: blur(10px) brightness(1.3);
+}
+.card-glow-inner {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  margin: 2px;
+  height: calc(100% - 4px);
+  border-radius: calc(1rem - 2px);
+  background: var(--color-surface);
+}
+@keyframes cardGlowSpin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-glow-ring::before {
+    animation: none;
+    inset: 0;
+    background: var(--color-primary);
+    opacity: 0.35;
+    transition: none;
+  }
+  .card-glow:hover .card-glow-ring::before {
+    filter: blur(8px);
+    opacity: 0.5;
+  }
+}
+
+/* ===== Accordion "Serviços" (navbar mobile) ===== */
+.mobile-services-dropdown summary {
+  list-style: none;
+}
+.mobile-services-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+.mobile-services-dropdown[open] summary .dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* ===== Hero "Lead the Way" (home) ===== */
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #F5F5F5;
+  font-size: 0.875rem;
+  padding: 10px 18px 10px 22px;
+  border-radius: 999px;
+}
+
+.hero-serif {
+  font-family: '"Playfair Display"', ui-serif, Georgia, serif;
+  font-style: italic;
+}
+
+/* ===== Transição suave entre o glow do hero e a seção seguinte ===== */
+.hero-fade-in-top {
+  background-image: linear-gradient(to bottom, transparent 0, #000000 150px, #000000 100%);
+}
+
+/* ===== Carrossel infinito de logos de parceiros (contido no container central) ===== */
+.hero-logo-marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.hero-logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 40px;
+  animation: heroLogoMarquee 20s linear infinite;
+}
+.hero-logo-track img {
+  flex-shrink: 0;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+.hero-logo-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .hero-logo-track {
+    gap: 56px;
+  }
+}
+@keyframes heroLogoMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-track {
+    animation: none;
+  }
+}
+
+/* ===== Demo "código sendo escrito" + "dashboard sendo montado" ===== */
+.code-type {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: top;
+  width: 0;
+}
+.code-type.is-caret {
+  border-right: 2px solid var(--color-primary);
+}
+@keyframes caretBlink {
+  50% { border-color: transparent; }
+}
+.code-type.is-caret {
+  animation: caretBlink 0.85s step-end infinite;
+}
+.code-end-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-primary);
+  vertical-align: middle;
+  margin-left: 2px;
+  opacity: 0;
+}
+.code-end-cursor.show {
+  opacity: 1;
+  animation: caretBlinkBg 0.9s step-end infinite;
+}
+@keyframes caretBlinkBg {
+  50% { opacity: 0; }
+}
+.assemble-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.assemble-item.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .code-type {
+    width: auto !important;
+  }
+  .code-type.is-caret {
+    border-right: none;
+    animation: none;
+  }
+  .assemble-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gestão de Performance | Luvi Company</title>
+<meta name="description" content="Gestão de tráfego pago (Meta, Google, TikTok, Pinterest) com relatórios claros e otimização diária. Saiba exatamente quanto cada real investido está trazendo de volta.">
+<link rel="canonical" href="https://www.luvicompany.com/performance">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/png" href="assets/img/favicon2.png">
+
+<meta property="og:site_name" content="Luvi Company">
+<meta property="og:title" content="Gestão de Performance | Luvi Company">
+<meta property="og:description" content="Tráfego pago com inteligência de mercado: você sabe exatamente quanto cada real investido está trazendo de volta.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/logo-luvi.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: { DEFAULT: '#FF3B00', dark: '#CC2F00' },
+          ink: '#0A0A0A',
+          surface: '#1A1A1A',
+          surface2: '#2A2A2A',
+          muted: '#9CA3AF',
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          heading: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- TODO: Google Tag Manager — inserir container GTM-XXXXXXX -->
+<!-- TODO: Meta Pixel — inserir pixel ID e base code -->
+<!-- TODO: GA4 — inserir Measurement ID (ou via GTM) -->
+</head>
+<body class="bg-ink text-white font-sans antialiased">
+<div class="floating-particles" aria-hidden="true"></div>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<!-- ============ NAVBAR ============ -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink/70 backdrop-blur-md lg:top-4 lg:border-b-0 lg:bg-transparent lg:backdrop-blur-none lg:px-4">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-20 lg:rounded-full lg:bg-ink/80 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-lg lg:shadow-black/40" aria-label="Navegação principal">
+    <div class="flex-1 flex items-center">
+      <a href="index.html" class="flex items-center gap-2 shrink-0" aria-label="Ir para a página inicial da Luvi Company">
+        <img src="assets/img/logo-luvi.png" alt="Luvi Company" class="h-9 md:h-11 w-auto" width="160" height="40">
+      </a>
+    </div>
+    <div class="hidden lg:flex flex-1 justify-center">
+    <ul class="flex items-center gap-8 text-sm text-gray-200">
+      <li><a href="index.html" class="hover:text-primary transition-colors">Início</a></li>
+      <li class="relative" data-dropdown>
+        <button type="button" data-dropdown-trigger class="text-primary transition-colors inline-flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+          Serviços
+          <i data-lucide="chevron-down" class="dropdown-chevron w-4 h-4" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-panel" role="menu" hidden>
+          <a href="performance.html" role="menuitem" class="dropdown-item gap-3 px-3 py-2.5 rounded-lg text-gray-200 hover:text-primary hover:bg-white/5 transition-colors">
+            <i data-lucide="target" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>
+            <span>Performance</span>
+          </a>
+          <a href="ecommerce.html" role="menuitem" class="dropdown-item gap-3 px-3 py-2.5 rounded-lg text-gray-200 hover:text-primary hover:bg-white/5 transition-colors">
+            <i data-lucide="shopping-cart" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>
+            <span>E-commerce</span>
+          </a>
+          <a href="desenvolvimento-de-site.html" role="menuitem" class="dropdown-item gap-3 px-3 py-2.5 rounded-lg text-gray-200 hover:text-primary hover:bg-white/5 transition-colors">
+            <i data-lucide="code-2" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>
+            <span>Desenvolvimento Web</span>
+          </a>
+          <a href="desenvolvimento-de-software.html" role="menuitem" class="dropdown-item gap-3 px-3 py-2.5 rounded-lg text-gray-200 hover:text-primary hover:bg-white/5 transition-colors">
+            <i data-lucide="terminal" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>
+            <span>Desenvolvimento de Software</span>
+          </a>
+          <a href="audiovisual.html" role="menuitem" class="dropdown-item gap-3 px-3 py-2.5 rounded-lg text-gray-200 hover:text-primary hover:bg-white/5 transition-colors">
+            <i data-lucide="video" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>
+            <span>Produção Audiovisual</span>
+          </a>
+        </div>
+      </li>
+      <li><a href="index.html#contato" class="hover:text-primary transition-colors">Contato</a></li>
+    </ul>
+    </div>
+    <div class="hidden lg:flex flex-1 justify-end">
+      <a href="https://wa.me/5511982412097?text=Ol%C3%A1!%20Quero%20solicitar%20uma%20An%C3%A1lise%20Pr%C3%A9via%20gratuita." target="_blank" rel="noopener" data-cta="nav_analise" data-whatsapp="nav_analise" class="btn-shine tap-target inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5">Fale com a gente</a>
+    </div>
+    <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="lg:hidden tap-target w-11 h-11 inline-flex items-center justify-center rounded-lg border border-white/10 text-white">
+      <i data-lucide="menu" class="w-5 h-5" aria-hidden="true"></i>
+    </button>
+  </nav>
+</header>
+
+<div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/70 z-40 lg:hidden"></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 z-50 h-full w-[82%] max-w-xs bg-surface border-l border-white/10 lg:hidden flex flex-col p-6" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <div class="flex items-center justify-between mb-8">
+    <img src="assets/img/logo-luvi.png" alt="Luvi Company" class="h-8 w-auto" width="120" height="30">
+    <button id="menu-close" type="button" aria-label="Fechar menu" class="tap-target w-11 h-11 inline-flex items-center justify-center rounded-lg border border-white/10 text-white">
+      <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+    </button>
+  </div>
+  <nav class="flex flex-col gap-1 text-lg" aria-label="Navegação mobile">
+    <a href="index.html" class="tap-target flex items-center px-2 rounded-lg hover:bg-white/5 text-gray-100">Início</a>
+    <details class="mobile-services-dropdown" open>
+      <summary class="tap-target flex items-center justify-between px-2 rounded-lg bg-white/5 text-primary cursor-pointer">
+        <span>Serviços</span>
+        <i data-lucide="chevron-down" class="dropdown-chevron w-5 h-5" aria-hidden="true"></i>
+      </summary>
+      <div class="flex flex-col gap-1 pl-4 mt-1">
+        <a href="performance.html" class="tap-target flex items-center gap-3 px-2 rounded-lg hover:bg-white/5 text-primary">
+          <i data-lucide="target" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>Performance
+        </a>
+        <a href="ecommerce.html" class="tap-target flex items-center gap-3 px-2 rounded-lg hover:bg-white/5 text-gray-100 hover:text-primary">
+          <i data-lucide="shopping-cart" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>E-commerce
+        </a>
+        <a href="desenvolvimento-de-site.html" class="tap-target flex items-center gap-3 px-2 rounded-lg hover:bg-white/5 text-gray-100 hover:text-primary">
+          <i data-lucide="code-2" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>Desenvolvimento Web
+        </a>
+        <a href="desenvolvimento-de-software.html" class="tap-target flex items-center gap-3 px-2 rounded-lg hover:bg-white/5 text-gray-100 hover:text-primary">
+          <i data-lucide="terminal" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>Desenvolvimento de Software
+        </a>
+        <a href="audiovisual.html" class="tap-target flex items-center gap-3 px-2 rounded-lg hover:bg-white/5 text-gray-100 hover:text-primary">
+          <i data-lucide="video" class="w-[18px] h-[18px] text-primary shrink-0" aria-hidden="true"></i>Produção Audiovisual
+        </a>
+      </div>
+    </details>
+    <a href="index.html#contato" class="tap-target flex items-center px-2 rounded-lg hover:bg-white/5 text-gray-100">Contato</a>
+  </nav>
+  <a href="https://wa.me/5511982412097?text=Ol%C3%A1!%20Quero%20solicitar%20uma%20An%C3%A1lise%20Pr%C3%A9via%20gratuita." target="_blank" rel="noopener" data-cta="mobile_menu_analise" data-whatsapp="mobile_menu_analise" class="btn-shine tap-target mt-auto w-full inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-3">Fale com a gente</a>
+</div>
+
+<main id="conteudo">
+
+  <!-- ============ HERO DO SERVIÇO ============ -->
+  <section class="relative pt-28 pb-16 md:pt-44 md:pb-20 overflow-hidden">
+    <div class="glow-hero" aria-hidden="true"></div>
+    <div class="bg-grid absolute inset-0" aria-hidden="true"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="reveal flex justify-center mb-6">
+        <span class="badge-pill"><i data-lucide="target" class="w-3.5 h-3.5" aria-hidden="true"></i> Gestão de Performance</span>
+      </div>
+      <h1 class="reveal font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl leading-[1.12] text-white mb-6">
+        Pare De Queimar Verba Em Anúncio <span class="text-primary">Sem Retorno.</span>
+      </h1>
+      <p class="reveal text-base sm:text-lg text-gray-300 max-w-[600px] mx-auto mb-8">
+        Gestão de tráfego pago com inteligência de mercado: você sabe exatamente quanto cada real investido está trazendo de volta.
+      </p>
+      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <a href="#contato" data-cta="performance_hero_analise" class="btn-shine tap-target w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark shadow-lg shadow-primary/30 text-white px-6 py-3 text-sm font-semibold">Quero minha análise grátis</a>
+      </div>
+      <p class="reveal mt-4 text-xs text-muted">Sem compromisso • Resposta em até 24h</p>
+    </div>
+  </section>
+
+  <!-- ============ O QUE INCLUI ============ -->
+  <section class="relative py-16 md:py-24 bg-surface/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="reveal font-heading font-bold text-3xl sm:text-4xl text-white text-center mb-4">O que inclui</h2>
+      <p class="reveal text-center text-muted max-w-xl mx-auto mb-12">Tudo que sua operação de tráfego pago precisa, em um único lugar.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Meta Ads (Facebook/Instagram)</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Google Ads</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">TikTok Ads</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Pinterest Ads</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Relatórios de performance</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Otimização diária de campanhas</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Análise de mercado e concorrência</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Configuração de Pixel e conversões</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Integração com CRM</span></div>
+        <div class="reveal flex items-center gap-3 rounded-xl border border-white/10 bg-surface p-4"><i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"></i><span class="text-sm text-gray-200">Landing page de captura</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFÍCIOS ============ -->
+  <section class="relative py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="reveal font-heading font-bold text-3xl sm:text-4xl text-white text-center mb-14">O que muda pro seu negócio</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="reveal rounded-2xl border border-white/10 bg-surface p-6">
+          <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4"><i data-lucide="line-chart" class="w-5 h-5 text-primary" aria-hidden="true"></i></div>
+          <h3 class="font-semibold text-white mb-1">ROAS claro</h3>
+          <p class="text-sm text-muted leading-relaxed">Você sabe exatamente quanto cada campanha está retornando.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-white/10 bg-surface p-6">
+          <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4"><i data-lucide="gauge" class="w-5 h-5 text-primary" aria-hidden="true"></i></div>
+          <h3 class="font-semibold text-white mb-1">Decisão por dado</h3>
+          <p class="text-sm text-muted leading-relaxed">Nada de achismo. Otimização baseada em número real.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-white/10 bg-surface p-6">
+          <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4"><i data-lucide="trending-up" class="w-5 h-5 text-primary" aria-hidden="true"></i></div>
+          <h3 class="font-semibold text-white mb-1">Escala com previsibilidade</h3>
+          <p class="text-sm text-muted leading-relaxed">Aumenta investimento sabendo o que esperar de retorno.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-white/10 bg-surface p-6">
+          <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4"><i data-lucide="file-bar-chart" class="w-5 h-5 text-primary" aria-hidden="true"></i></div>
+          <h3 class="font-semibold text-white mb-1">Relatório sem enrolação</h3>
+          <p class="text-sm text-muted leading-relaxed">Você acompanha o que importa, sem termo técnico solto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFÓLIO (reaproveitado) ============ -->
+  <section class="relative py-16 md:py-24 bg-surface/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6" data-tab-group>
+      <h2 class="reveal font-heading font-bold text-3xl sm:text-4xl text-white text-center mb-10">Marcas que já cresceram com a gente</h2>
+
+      <div class="reveal flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Filtro de portfólio">
+        <button type="button" class="tab-btn tap-target px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold text-gray-200" role="tab" aria-selected="true" tabindex="0" data-tab-btn="web">Desenvolvimento Web</button>
+        <button type="button" class="tab-btn tap-target px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold text-gray-200" role="tab" aria-selected="false" tabindex="-1" data-tab-btn="ecommerce">E-commerce</button>
+        <button type="button" class="tab-btn tap-target px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold text-gray-200" role="tab" aria-selected="false" tabindex="-1" data-tab-btn="audiovisual">Produção Audiovisual</button>
+      </div>
+
+      <div data-tab-panel="web" role="tabpanel" class="snap-row sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 px-1">
+        <!-- TODO: inserir a URL real de cada site em href (prints reais já aplicados) -->
+        <a href="#" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/ramal-virtual.jpg" alt="Print do site Ramal Virtual" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">Ramal Virtual</p>
+        </a>
+        <a href="https://mettawall.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/mettawall.jpg" alt="Print do site MettaWall" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">MettaWall</p>
+        </a>
+        <a href="https://parceiros.pandoraembalagens.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/pandora-embalagens.jpg" alt="Print do site Pandora Embalagens" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">Pandora Embalagens</p>
+        </a>
+        <a href="https://www.pnprovedor.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/pn-provedor.jpg" alt="Print do site PN Provedor" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">PN Provedor</p>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/quality.jpg" alt="Print do site Quality Vacuum" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">Quality Vacuum</p>
+        </a>
+        <a href="https://www.drairless.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/dr-airless.jpg" alt="Print do site Dr Airless" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">Dr Airless</p>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/pink.jpg" alt="Print do site Pink Heels" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">Pink Heels</p>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/portfolio-web/forza.jpg" alt="Print do site Forza BR" class="aspect-[21/10] w-full object-cover">
+          <p class="p-3 text-sm text-gray-200 font-medium">Forza BR</p>
+        </a>
+      </div>
+
+      <div data-tab-panel="ecommerce" role="tabpanel" class="hidden snap-row sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 px-1">
+        <a href="https://thgmodas.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/THG%20Modas.png" alt="Print da loja THG Modas" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">THG Modas</p>
+        </a>
+        <a href="https://hugomodas.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Hugo%20Modas.png" alt="Print da loja Hugo Modas" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Hugo Modas</p>
+        </a>
+        <a href="https://usenaipp.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Use%20Naipp.png" alt="Print da loja Use Naipp" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Use Naipp</p>
+        </a>
+        <a href="https://www.galdorastore.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Galdora%20Store.png" alt="Print da loja Galdora Store" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Galdora Store</p>
+        </a>
+        <a href="https://www.veefit.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/VEE%20FIT.png" alt="Print da loja VeeFit" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">VeeFit</p>
+        </a>
+        <a href="https://pngstore.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/PNG%20Store.png" alt="Print da loja PNG Store" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">PNG Store</p>
+        </a>
+        <a href="https://bappe.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Bappe.png" alt="Print da loja Bappe" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Bappe</p>
+        </a>
+        <a href="https://marealtaextrema.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Marealtaextrema.png" alt="Print da loja Marealtaextrema" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Marealtaextrema</p>
+        </a>
+        <a href="https://www.eruptioncompany.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Eruption%20Company.png" alt="Print da loja Eruption Company" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Eruption Company</p>
+        </a>
+        <a href="https://florenciaconcept.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Florência%20Concept.png" alt="Print da loja Florência Concept" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Florência Concept</p>
+        </a>
+        <a href="https://gisellemodas.com.br/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 block rounded-2xl overflow-hidden border border-white/10 bg-surface">
+          <img src="assets/img/Giselle%20Modas.png" alt="Print da loja Giselle Modas" class="aspect-[2/1] w-full object-contain bg-surface">
+          <p class="p-3 text-sm text-gray-200 font-medium">Giselle Modas</p>
+        </a>
+      </div>
+
+      <div data-tab-panel="audiovisual" role="tabpanel" class="hidden snap-row sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 px-1">
+        <!-- O embed oficial do Instagram sempre traz a moldura deles (perfil, legenda, "Assistir no
+             Instagram") — não dá pra remover isso via CSS, é exigência da política de embed deles.
+             Por isso cada card usa a capa real do post (baixada de assets/img/portfolio-audiovisual/)
+             com o ícone de play por cima, abrindo o post/reel real no Instagram numa nova aba. -->
+        <a href="https://www.instagram.com/p/Da1eOwuxX3e/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-01.jpg" alt="Capa do post 01 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DYFa--dRcfJ/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-02.jpg" alt="Capa do post 02 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DZtV_U6Oa9_/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-03.jpg" alt="Capa do post 03 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DZtWgadOjSv/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-04.jpg" alt="Capa do post 04 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DZlIQKduAi3/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-05.jpg" alt="Capa do post 05 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DZf8Iroua_n/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-06.jpg" alt="Capa do post 06 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DamtW_Evd09/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-07.jpg" alt="Capa do post 07 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DXfhmutjM83/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-08.jpg" alt="Capa do post 08 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DZNXA-CR60F/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-09.jpg" alt="Capa do post 09 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DbdwCzXRTJF/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-10.jpg" alt="Capa do post 10 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/Dbvj-Txh5pf/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-11.jpg" alt="Capa do post 11 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/Db3i4fJhfQo/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-12.jpg" alt="Capa do post 12 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/Db56iRTBS2n/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-13.jpg" alt="Capa do post 13 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/Db8XD0ZNMmz/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-14.jpg" alt="Capa do post 14 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DcBxHzkRy0H/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-15.jpg" alt="Capa do post 15 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DcOg3Vahqyn/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-16.jpg" alt="Capa do post 16 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DcTqz2uOSOW/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-17.jpg" alt="Capa do post 17 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DcepznKhp4U/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-18.jpg" alt="Capa do post 18 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/p/DclolfDx75q/" target="_blank" rel="noopener" class="reveal w-[70vw] max-w-[260px] sm:w-auto shrink-0 relative rounded-2xl overflow-hidden border border-white/10 bg-surface group">
+          <img src="assets/img/portfolio-audiovisual/post-19.jpg" alt="Capa do post 19 no Instagram" class="aspect-[9/16] w-full object-cover">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/25">
+            <i data-lucide="play-circle" class="w-10 h-10 text-white/90 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section id="contato" class="relative py-20 md:py-28 bg-surface/40 overflow-hidden">
+    <div class="glow-soft" aria-hidden="true"></div>
+    <div class="relative max-w-2xl mx-auto px-4 sm:px-6">
+      <h2 class="reveal font-heading font-bold text-3xl sm:text-4xl text-white text-center mb-4">Cada dia sem estratégia conectada é venda ficando na mesa.</h2>
+      <p class="reveal text-center text-muted mb-10">Preencha o formulário e receba sua Análise Prévia gratuita.</p>
+
+      <form id="lead-form" class="reveal rounded-3xl border border-white/10 bg-surface p-6 sm:p-8 space-y-5" novalidate>
+        <div>
+          <label for="nome" class="block text-sm font-medium text-gray-200 mb-1.5">Nome</label>
+          <input type="text" id="nome" name="nome" required autocomplete="name" class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-white placeholder:text-muted focus:border-primary outline-none" placeholder="Seu nome completo">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-200 mb-1.5">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email" class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-white placeholder:text-muted focus:border-primary outline-none" placeholder="voce@empresa.com">
+        </div>
+        <div>
+          <label for="whatsapp" class="block text-sm font-medium text-gray-200 mb-1.5">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-white placeholder:text-muted focus:border-primary outline-none" placeholder="(11) 90000-0000">
+        </div>
+        <div>
+          <label for="nicho" class="block text-sm font-medium text-gray-200 mb-1.5">Nicho / segmento</label>
+          <input type="text" id="nicho" name="nicho" required class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-white placeholder:text-muted focus:border-primary outline-none" placeholder="Ex: moda, saúde, indústria...">
+        </div>
+        <div>
+          <label for="faturamento" class="block text-sm font-medium text-gray-200 mb-1.5">Faturamento mensal</label>
+          <input type="text" id="faturamento" name="faturamento" required class="w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-white placeholder:text-muted focus:border-primary outline-none" placeholder="Ex: R$ 100.000, R$ 200.000...">
+        </div>
+        <button type="submit" data-cta="form_analise_gratis" class="btn-shine tap-target w-full inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark shadow-lg shadow-primary/30 text-white font-semibold px-6 py-3.5">Quero minha análise grátis</button>
+        <a href="https://wa.me/5511982412097?text=Ol%C3%A1!%20Quero%20solicitar%20uma%20An%C3%A1lise%20Pr%C3%A9via%20gratuita." target="_blank" rel="noopener" data-whatsapp="form_final" class="btn-shine tap-target w-full inline-flex items-center justify-center gap-2 rounded-full border border-white/20 text-white font-semibold px-6 py-3.5 hover:bg-white/5">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"></path></svg> Falar agora no WhatsApp
+        </a>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-black border-t border-white/10 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div class="sm:col-span-2 md:col-span-1">
+        <img src="assets/img/logo-luvi.png" alt="Luvi Company" class="h-10 w-auto mb-4" width="160" height="40">
+        <p class="text-sm text-muted max-w-xs leading-relaxed mb-4">Agência completa de performance digital: tráfego, e-commerce, site e audiovisual numa engrenagem só.</p>
+        <p class="inline-flex items-center gap-2 text-sm text-muted mb-4 whitespace-nowrap"><i data-lucide="map-pin" class="w-4 h-4 shrink-0 text-primary" aria-hidden="true"></i>São Paulo - SP, atendimento em todo o Brasil</p>
+        <div class="flex items-center gap-3">
+          <a href="https://instagram.com/luvicompany_" target="_blank" rel="noopener" aria-label="Instagram da Luvi Company" class="tap-target w-10 h-10 inline-flex items-center justify-center rounded-full border border-white/15 text-muted hover:text-primary hover:border-primary/40 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px]" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://www.tiktok.com/@aluvicompany" target="_blank" rel="noopener" aria-label="TikTok da Luvi Company" class="tap-target w-10 h-10 inline-flex items-center justify-center rounded-full border border-white/15 text-muted hover:text-primary hover:border-primary/40 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+          </a>
+          <a href="https://www.youtube.com/@Luvicompany" target="_blank" rel="noopener" aria-label="YouTube da Luvi Company" class="tap-target w-10 h-10 inline-flex items-center justify-center rounded-full border border-white/15 text-muted hover:text-primary hover:border-primary/40 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[18px] h-[18px]" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Serviços</h3>
+        <ul class="space-y-2 text-sm text-muted">
+          <li><a href="performance.html" class="hover:text-primary transition-colors">Gestão de Performance</a></li>
+          <li><a href="ecommerce.html" class="hover:text-primary transition-colors">E-commerce</a></li>
+          <li><a href="desenvolvimento-de-site.html" class="hover:text-primary transition-colors">Desenvolvimento Web</a></li>
+          <li><a href="desenvolvimento-de-software.html" class="hover:text-primary transition-colors">Desenvolvimento de Software</a></li>
+          <li><a href="audiovisual.html" class="hover:text-primary transition-colors">Produção Audiovisual</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Pronto pra vender mais?</h3>
+        <p class="text-sm text-muted leading-relaxed mb-5">Fale com a Luvi Company e descubra onde sua empresa está perdendo venda.</p>
+        <a href="https://wa.me/5511982412097?text=Ol%C3%A1!%20Quero%20solicitar%20uma%20An%C3%A1lise%20Pr%C3%A9via%20gratuita." target="_blank" rel="noopener" data-cta="footer_analise" data-whatsapp="footer_analise" class="btn-shine tap-target inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5">Fale com a gente</a>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/10 text-xs text-muted flex flex-col sm:flex-row justify-between gap-2">
+      <p>&copy; <span id="current-year"></span> Luvi Company. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>if (window.lucide) { lucide.createIcons(); }</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
