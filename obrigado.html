@@ -36,14 +36,28 @@
 </script>
 <link rel="stylesheet" href="assets/css/styles.css">
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T5ZQQRKQ');</script>
+<!-- End Google Tag Manager -->
 <!--
-  TODO: esta é a thank-you page de conversão. Disparar aqui o evento de
-  conversão do Meta Pixel (ex: Lead), GA4 (ex: generate_lead) e/ou GTM,
-  já que o carregamento desta página confirma um envio de formulário real
-  (mais confiável que disparar no clique do botão).
+  Esta é a thank-you page de conversão: o carregamento dela confirma um
+  envio de formulário real (mais confiável que disparar no clique do
+  botão). O evento "lead_form_submit" já é enviado ao dataLayer no
+  momento do envio do formulário (ver assets/js/main.js), antes do
+  redirecionamento pra cá — configure o gatilho de conversão no GTM
+  em cima desse evento, ou crie um gatilho de Visualização de Página
+  filtrando pela URL /obrigado.
 -->
 </head>
 <body class="bg-ink text-white font-sans antialiased">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5ZQQRKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="floating-particles" aria-hidden="true"></div>
 <header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink/70 backdrop-blur-md">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-20" aria-label="Navegação principal">
