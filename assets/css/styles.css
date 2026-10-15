@@ -40,6 +40,46 @@
   }
 }
 
+/* ===== Botão flutuante do WhatsApp (canto inferior direito, todas as páginas) =====
+ * position:fixed + z-index:40 — fica por cima do conteúdo normal e do
+ * .floating-particles (z-index:1), mas abaixo da navbar e de qualquer
+ * painel/menu (z-50). Verde oficial do WhatsApp (#25D366) de propósito,
+ * mesmo com o resto do site usando laranja — é o padrão universal que o
+ * usuário reconhece de cara como "abrir WhatsApp". hover:scale fica atrás de
+ * (hover: hover) and (pointer: fine) pra não grudar em touch (bug já visto
+ * antes nos outros efeitos de hover do site).
+ */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  }
+}
+@media (max-width: 767px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
 /* ===== Brilho diagonal + "levantar" no CTA "Fale com a gente" (hover) =====
  * ::before é uma faixa de luz na diagonal que começa fora do botão à
  * esquerda (-120%) e atravessa até sair pela direita (120%) no hover, em
