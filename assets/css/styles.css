@@ -47,7 +47,9 @@
  * mesmo com o resto do site usando laranja — é o padrão universal que o
  * usuário reconhece de cara como "abrir WhatsApp". hover:scale fica atrás de
  * (hover: hover) and (pointer: fine) pra não grudar em touch (bug já visto
- * antes nos outros efeitos de hover do site).
+ * antes nos outros efeitos de hover do site). isolation:isolate cria um
+ * stacking context próprio pro z-index negativo do ::before (anel de pulso)
+ * não escapar pro resto da página (mesmo truque documentado no .btn-shine).
  */
 .whatsapp-float {
   position: fixed;
@@ -63,6 +65,7 @@
   background: #25d366;
   color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  isolation: isolate;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -77,6 +80,36 @@
     bottom: 16px;
     width: 52px;
     height: 52px;
+  }
+}
+
+/* Anel de pulso minimalista: um círculo atrás do botão (z-index:-1) que
+ * cresce e desaparece em loop lento (2.4s), só pra chamar atenção pro canto
+ * da tela sem ser chamativo — sem cor piscando, sem rotação, sem brilho.
+ * prefers-reduced-motion desliga por completo. */
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 50%;
+  background: #25d366;
+  animation: whatsappPulse 2.4s ease-out infinite;
+}
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float::before {
+    animation: none;
+    display: none;
   }
 }
 
